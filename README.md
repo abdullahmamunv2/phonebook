@@ -19,7 +19,18 @@ npm run build:dev
 
 ### Database
 I have shared a docker compose file. You can use it to run mongo server.
-Otherwise change db config into root/config/default.json(MONGO_DB)
+Otherwise change db config into root/config/default.json
+
+default.json
+```
+"MONGO_DB" : {
+        "url" : "mongodb://admin:admin@localhost:27017/sample_database?authSource=admin",
+        "options" : {
+            "useNewUrlParser"    : true,
+            "useUnifiedTopology" : true
+        }
+    },
+```
 
 ### RUN Command
 You can run using either node command or docker
@@ -33,14 +44,17 @@ npm run start:local
 
 ### API LIST
 
------------------------------------Commenter Signup------------------------------
+Commenter Signup
+```
 POST localhost:9293/api/v1/signup/direct
 {
     "username" : "+8801759050153",
     "password" : "test"
 }
+```
 
 Response : 
+```
 200 OK
 {
     "status": "SUCCESS",
@@ -50,8 +64,10 @@ Response :
     }
 }
 
-400 : 
+```
 
+400 : 
+```
 {
     "status": "FAIL",
     "error": {
@@ -65,18 +81,23 @@ Response :
         ]
     }
 }
+```
 
 
--------------------- commenter Signin --------------
+Commenter Signin 
+
+```
 POST localhost:9293/api/v1/signin/direct
 {
     "username" : "+8801759050153",
     "password" : "test"
 }
+```
 
-response : 
+Response : 
+
 200 OK : 
-
+```
 {
     "status": "SUCCESS",
     "data": {
@@ -85,25 +106,28 @@ response :
     }
 }
 
+```
 
 
-------------------------------Commenter profile pic uplaod-----------------
+
+Commenter profile pic uplaod
+
+```
 POST localhost:9293/api/v1/upload
 Content-Type : form-data
 Authorization : Bearer <AccessToken>
-
 ** Form data key name should be 'file'
+```
 
 Response : 
-
+```
 {
     "status": "SUCCESS",
     "data": {
         "url": "http://localhost:9293/static/brainstation/5f0b1f2d8df63117b96fe9e9/bccf04ab-b908-4867-b246-cc235f43ac69.js"
     }
 }
-
---------------------------------- profile create/update ---------------
+```
 
 
 
