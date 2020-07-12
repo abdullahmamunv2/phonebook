@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "ES2015",                 
+      "module": "commonjs",               
+      "lib": ["es5", "es2015","es2018"],  
+      "declaration": false,               
+      "sourceMap": false,            
+      "strict": true,                     
+      "strictNullChecks": true,           
+      "alwaysStrict": true,               
+      "moduleResolution": "node", 
+      "baseUrl": "src/main",                  
+      "paths": {
+        "@core/*": ["core/*"],
+        "@adapter/*": ["adapter/*"],
+        "@infrastructure/*" : ["infrastructure/*"]
+      },                           
+      "types": ["reflect-metadata","@hapi/joi"], 
+      "esModuleInterop": true,               
+      "experimentalDecorators": true,        
+       "emitDecoratorMetadata": true        
+    }
+  }

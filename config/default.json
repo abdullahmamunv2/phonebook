@@ -1,0 +1,39 @@
+{
+    "SERVER" : {
+        "protocol" : ["http","https"]
+    },
+    "SQL_SERVER" : {
+        "options"  :{
+            "encrypt":false
+        },
+        "pool"     : {
+            "max"    : 4,
+            "min"    : 0,
+            "idleTimeoutMillis" : 30000,
+            "autostart" : false,
+            "retryDelay" : 10000,
+            "acquireTimeoutMillis": 15000
+        }
+    },
+    "MONGO_DB" : {
+        "url" : "mongodb://admin:admin@localhost:27017/sample_database?authSource=admin",
+        "options" : {
+            "useNewUrlParser"    : true,
+            "useUnifiedTopology" : true
+        }
+    },
+    "OAUTH2":{
+        "google" : {
+            
+        }
+    },
+    "TOKEN_SECRET":{
+        "alg" : "RS256",
+        "secret" : "@#asfdf!998"
+    },
+    "FILE_UPLOAD" : {
+        "dir": "UNINITIALIZED",
+        "tempDir" : "UNINITIALIZED",
+        "baseUrl" : "UNINITIALIZED"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "appenders" : {
+        "console" : {
+            "type"       : "stdout",
+            "layout" : {
+                "type" : "colored",
+                "pattern" : "[%d] [%z] [%p] [%c] - %m"
+            }
+        },
+        "api" :{
+            "type"       : "dateFile",
+            "filename"   : "logs/api/api.log",
+            "compress": true,
+            "daysToKeep" :30,
+            "keepFileExt" : true,
+            "layout" : {
+                "type" : "pattern",
+                "pattern" : "[%d] [%z] [%p] [%c] - %m"
+            }
+        },
+        "database" :{
+            "type"       : "dateFile",
+            "filename"   : "logs/database/database.log",
+            "compress": true,
+            "daysToKeep" :30,
+            "keepFileExt" : true,
+            "layout" : {
+                "type" : "pattern",
+                "pattern" : "[%d] [%z] [%p] [%c] - %m"
+            }
+        },
+        "application" : {
+            "type"       : "dateFile",
+            "filename"   : "logs/application/application.log",
+            "compress": true,
+            "daysToKeep" :30,
+            "keepFileExt" : true,
+            "layout" : {
+                "type" : "pattern",
+                "pattern" : "[%d] [%z] [%p] [%c] - %m"
+            }
+        }
+    },
+    "categories" : {
+        "default" : {
+            "appenders": [ "console" ],
+            "level": "all" 
+        },
+        "Application": { 
+            "appenders": [ "application" ],
+            "level": "all" 
+        },
+        "Api": { 
+            "appenders": [ "api" ],
+            "level": "all" 
+        },
+        "Database":{
+            "appenders": [ "database" ],
+            "level": "all"
+        }
+        
+    },
+    "pm2": true,
+    "pm2InstanceVar " : "INSTANCE_ID"
+}

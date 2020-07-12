@@ -1,0 +1,8 @@
+import { Signin } from "@core/domain/entity/signin";
+import { Token } from "@core/domain/entity/token";
+
+export default interface IGoogleSigninEntityGateway{
+    get(username:string):Promise<Signin|undefined>;
+    create(signin:Signin):Promise<Signin>;
+    token(signin:Signin):Promise<Token>
+}

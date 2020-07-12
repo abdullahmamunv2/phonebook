@@ -1,0 +1,20 @@
+{
+    "apps" : [{
+      "name"         : "robi-mife-staging",
+      "instances"    : 1,
+      "script"       : "main/main.js",
+      "exec_mode"    : "cluster_mode",
+      "error_file"   : "./logs/error/pm2.error.log",
+      "out_file"     : "./logs/out/pm2.out.log",
+      "kill_timeout" : 10000,
+      "listen_timeout" : 10000,
+      "watch"        : false,
+      "ignore_watch" : ["node_modules"],
+      "env"          : {
+        "NODE_ENV"        : "staging",
+        "NODE_CONFIG_DIR" : "./config/",
+        "NODE_IN_PM2" : true
+      },
+      "wait_ready"   : true
+    }]
+  }

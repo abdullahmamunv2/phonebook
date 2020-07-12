@@ -1,0 +1,8 @@
+{
+    "FILE_UPLOAD" : {
+        "dir": "FILE_UPLOAD_DIR",
+        "tempDir":"FILE_UPLOAD_TEMP_DIR",
+        "baseUrl" : "FILE_UPLOAD_BASE_URL",
+        "maxSize" : "FILE_UPLOAD_MAX_SIZE"
+    }
+}

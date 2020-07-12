@@ -1,0 +1,9 @@
+node_modules
+config/production.json
+dist/*
+package-lock.json
+./.eslintrc.json
+doc/*
+logs/*
+public/*
+token-secret/prod/*
