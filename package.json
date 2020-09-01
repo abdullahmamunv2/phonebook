@@ -1,5 +1,5 @@
 {
-  "name": "brainstation-task",
+  "name": "phonebook",
   "version": "1.0.0",
   "description": "",
   "main": "./main/main.js",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamrulhasan1203/node-clean-architecture.git"
+    "url": "git+https://github.com/kamrulhasan1203/phonebook.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/kamrulhasan1203/node-clean-architecture",
+  "homepage": "https://github.com/kamrulhasan1203/phonebook",
   "dependencies": {
     "@hapi/joi": "^15.1.1",
     "automapper-ts": "^1.9.0",

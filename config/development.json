@@ -5,41 +5,5 @@
             "http" : "9293",
             "https" : "443"
         }
-    },
-    "SQL_SERVER":{
-        "user"     : "sa",
-        "password" : "Charlie@123456",
-        "server"   : "localhost",
-        "port"     : 1433,
-        "database" :"swipe_chat",
-        "debug": true,
-        "pool"     : {
-            "min"    : 1
-        }
-    },
-    "SIP_SQL_SERVER" : {
-        "user"     : "sa",
-        "password" : "Charlie@123456",
-        "server"   : "localhost",
-        "port"     : 1433,
-        "database" :"swipe_chat",
-        "debug": true,
-        "pool"     : {
-            "min"    : 1,
-            "max"    : 2
-        }
-    },
-    "PUSH_NOTIFICATION":{
-        "api" : {
-            "baseUrl" : "http://192.168.7.13:8082",
-            "app_key": "AIzaSyA2NhpyJ6d_n7bW4lgcn0lukgJt7e1w7vs",
-            "package_name" : "com.supernova.swipechat"
-        }
-    },
-    "OAUTH2":{
-        "google" : {
-            "CLIENT_ID":"453804591265-akne0bvkmdis49ti6s6r664i1pgj7kcd.apps.googleusercontent.com",
-            "CLIENT_SECRET" : "iZ396-U7_xMo-_AYHqgHez1n"
-        }
     }
 }

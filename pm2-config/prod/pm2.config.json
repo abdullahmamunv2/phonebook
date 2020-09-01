@@ -1,6 +1,6 @@
 {
     "apps" : [{
-      "name"         : "swipe-chat-backend",
+      "name"         : "phonebook",
       "instances"    : 1,
       "script"       : "main/main.js",
       "exec_mode"    : "cluster_mode",

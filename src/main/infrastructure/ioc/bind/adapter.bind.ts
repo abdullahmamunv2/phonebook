@@ -5,21 +5,14 @@ import { TYPE } from '@adapter/di';
 import { ErrorResponse, ApplicationError } from '@core/errors';
 import { ErrorPresenter } from '@adapter/presenter';
 import { ErrorViewModel, SuccessViewModel } from '@adapter/viewmodel';
-import { SignupResponse, GoogleSignupResponse } from '@core/req.res.model/response/signup';
-import { DirectSignupPresenter } from '@adapter/presenter/signup';
-import { DirectSignupRequest } from '@core/req.res.model/request/signup';
-import { DirectSignupInteractor } from '@core/interactor/signup';
 
-import { TokenResponse } from '@core/req.res.model/response/token';
-import { DirectSigninInteractor} from '@core/interactor/signin';
-
-import { FileUploadInteractor } from '@core/interactor/upload';
-import { UploadRequest } from '@core/req.res.model/request/upload';
-import { JwtAuthRequest } from '@core/authorization/req.res.model/jwt';
-import { UploadResponse } from '@core/req.res.model/response/upload';
-import { UploadPresenter } from '@adapter/presenter/upload';
-import { ProfileResponse } from '@core/req.res.model/response/profile';
-import { DirectSigninRequest} from '@core/req.res.model/request/signin';
+import { ContactRequest, PaginationRequest } from '@core/req.res.model/request/contact';
+import { ContactDeleteResponse, ContactListResponse, ContactResponse } from '@core/req.res.model/response/contact';
+import ContactCreateInteractor from '@core/interactor/contact/ContactCreateInteractor';
+import { ContactCreatePresenter, ContactDeletePresenter, ContactListPresenter } from '@adapter/presenter/contact';
+import ContactReadInteractor from '@core/interactor/contact/ContactReadInteractor';
+import { ContactDeleteInteractor, ContactEditInteractor } from '@core/interactor/contact';
+import ContactListInteractor from '@core/interactor/contact/ContactListInteractor';
 
 
 
@@ -27,14 +20,16 @@ import { DirectSigninRequest} from '@core/req.res.model/request/signin';
 /**
  * Interactor bindings
  */
+IOContainer.bind<Interactor<ContactRequest,ContactResponse>>(TYPE.INTERACTOR.CONTACT_CREATE).to(ContactCreateInteractor);
+IOContainer.bind<Interactor<string,ContactResponse>>(TYPE.INTERACTOR.CONTACT_READ).to(ContactReadInteractor);
+IOContainer.bind<Interactor<ContactRequest,ContactResponse>>(TYPE.INTERACTOR.CONTACT_EDIT).to(ContactEditInteractor);
+IOContainer.bind<Interactor<string,ContactDeleteResponse>>(TYPE.INTERACTOR.CONTACT_DELETE).to(ContactDeleteInteractor);
+IOContainer.bind<Interactor<PaginationRequest,ContactListResponse>>(TYPE.INTERACTOR.CONTACT_LIST).to(ContactListInteractor);
 
- IOContainer.bind<Interactor<DirectSigninRequest,TokenResponse>>(TYPE.INTERACTOR.DIRECT_SIGN_IN).to(DirectSigninInteractor).inSingletonScope()
- IOContainer.bind<Interactor<Request<DirectSignupRequest>,SignupResponse>>(TYPE.INTERACTOR.DIRECT_SIGNUP).to(DirectSignupInteractor).inSingletonScope()
- IOContainer.bind<Interactor<Request<UploadRequest,JwtAuthRequest>,UploadResponse>>(TYPE.INTERACTOR.UPLOAD).to(FileUploadInteractor).inSingletonScope();
  /**
  * Presenter bindings  
  */
-
 IOContainer.bind<IPresenter<ErrorResponse<ApplicationError>,ErrorViewModel<any>>>(TYPE.PRESENTER.ERROR).to(ErrorPresenter).inSingletonScope();
-IOContainer.bind<IPresenter<SignupResponse,SuccessViewModel<any>>>(TYPE.PRESENTER.DIRECT_SIGNUP).to(DirectSignupPresenter).inSingletonScope()
-IOContainer.bind<IPresenter<UploadResponse,SuccessViewModel<any>>>(TYPE.PRESENTER.UPLOAD).to(UploadPresenter).inSingletonScope()
+IOContainer.bind<IPresenter<ContactResponse,SuccessViewModel<any>>>(TYPE.PRESENTER.CONTACT_CREATE).to(ContactCreatePresenter).inSingletonScope()
+IOContainer.bind<IPresenter<ContactDeleteResponse,SuccessViewModel<any>>>(TYPE.PRESENTER.CONTACT_DELETE).to(ContactDeletePresenter).inSingletonScope()
+IOContainer.bind<IPresenter<ContactListResponse,SuccessViewModel<any>>>(TYPE.PRESENTER.CONTACT_LIST).to(ContactListPresenter).inSingletonScope()

@@ -38,7 +38,6 @@ import {App} from '@infrastructure/app'
 let serverConfig = config.get('SERVER');
 import { IOContainer } from '@infrastructure/ioc';
 import { TYPE } from '@infrastructure/di';
-import { DatabaseManager } from '@infrastructure/persistance/dbmanager/mssql';
 import {MongoDBManager }  from '@infrastructure/persistance/dbmanager/mongo';
 
 import {retryAtFixedRate} from '@infrastructure/util'

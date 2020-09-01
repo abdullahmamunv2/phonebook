@@ -1,15 +1,11 @@
 import {Router} from 'express'
-import {direcSignupRouter} from '../signup'
-import signInRouter from '../signin'
-import {uploadRouter}  from '../upload';
 import {BearerToken} from '@infrastructure/routers/middleware'
 
+import ContactRouter from '@infrastructure/routers/contact'
 const router = Router();
 
-router.use('/signup',direcSignupRouter);
-router.use('/signin',signInRouter);
-//push
-router.use(BearerToken);
-router.use('/upload',uploadRouter);
+
+router.use('/contacts',ContactRouter);
+
 
 export default router;

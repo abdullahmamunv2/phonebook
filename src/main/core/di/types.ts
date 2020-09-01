@@ -1,3 +1,4 @@
+
 export const TYPE : any = {
 }
 
@@ -14,14 +15,7 @@ TYPE.OAUTH2_TOKEN_PARSER = {
 }
 
 TYPE.ENTITY_GATEWAY = {
-    SIGNUP      : Symbol.for('IDirectSignupEntityGateway'),
-    OTP         : Symbol.for('IOtpEntityGateway'),
-    TOKEN       : Symbol.for('ITokenEntityGateway'),
-    GOOGLE_SIGNIN : Symbol.for('IGoogleSigninEntityGateway'),
-    FACEBOOK_SIGNIN : Symbol.for('IFacebookSigninEntityGateway'),
-    DIRECT_SIGNIN : Symbol.for('IDirectSigninEntityGateway'),
-    UPLOAD      : Symbol.for('IUploadEntityGateway'),
-    PROFILE     : Symbol.for('IProfileEntityGateway')
+    CONTACT : Symbol.for('IContactEntityGateway<Contact>')
 }
 
 
@@ -29,27 +23,19 @@ TYPE.ENTITY_GATEWAY = {
 TYPE.VALIDATOR = {
     GATEWAY      : Symbol.for('IValidatorGateway<T,S>'),
     ERROR_PARSER : Symbol.for('IValidationErrorParser'),
-    COMMENT_ADD_VALIDATOR : Symbol.for('IValidator<DirectSigninRequest>'), 
 
-    DIRECT_SIGNUP : Symbol.for('IValidator<DirectSignupRequest>'),
-    OTP_SEND     : Symbol.for('IValidator<OtpSendRequest>'),
-    OTP_VERIFY   : Symbol.for('IValidator<OtpVerificationRequest>'),
-    DIRECT_SIGNIN : Symbol.for('IValidator<DirectSigninRequest>'),
-    PROFILE      : Symbol.for('IValidator<ProfileRequest>'),
-    FACEBOOK_SIGNIN : Symbol.for('IValidator<FacebookSigninRequest>')
+    CONTACT_CREATE : Symbol.for('IValidator<ContactRequest>')
+    
 }
 
 TYPE.MAPPER ={}
 
 TYPE.MAPPER.REQUEST = {
-    UPLOAD : Symbol.for('IMapper<UploadRequest,File>'),
-    PROFILE : Symbol.for('IMapper<ProfileRequest,Profile>')
+    
 }
 
 TYPE.MAPPER.RESPONSE = {
-    UPLOAD : Symbol.for('IMapper<File,UploadResponse>'),
-    PROFILE : Symbol.for('IMapper<Profile,ProfileResponse>'),
-    TOKEN   : Symbol.for('IMapper<Signin,TokenResponse>')
+    
 }
 
 TYPE.HASH  = {

@@ -13,28 +13,7 @@ TYPE.AUTH.CONFIG = {
 }
 
 TYPE.CONTROLLER = {
-   DIRECT_SIGNUP : Symbol.for('DirectSignupController'),
-   SEND_OTP      : Symbol.for('OtpSendController'),
-   OTP_VERIFY    : Symbol.for('OtpVerificationController'),
-   GOOGLE_SIGN_IN : Symbol.for('GoogleSigninController'),
-   DIRECT_SIGN_IN : Symbol.for('DirectSigninController'),
-   FACEBOOK_SIGN_IN : Symbol.for('FacebookSigninController'),
-   FRIEND_REQUEST : Symbol.for('FriendRequestController'),
-   PENDING_LIST : Symbol.for('PendingListController'),
-   REQUEST_ACCEPT : Symbol.for('RequestAcceptController'),
-   REQUEST_DELETE : Symbol.for('RequestDeleteController'),
-    
-
-   UPLOAD        : Symbol.for('UploadController'),
-   PROFILE_UPSERT : Symbol.for('ProfileUpsertController'),
-   PROFILE_READ  : Symbol.for('ProfileReadController'),
-
-   SIP_STATUS    : Symbol.for('SipStatusController'),
-   USER_LOCATION : Symbol.for('UserLocationController'),
-   USER_NEAREST  : Symbol.for('NearestUserController'),
-   CONVERSATION_READ : Symbol.for('ConversationController'),
-   CONVERSATION_READ_ID : Symbol.for('ConversationReadController'),
-   PUSH_NOTIFICATION : Symbol.for('PushNotificationController')
+   CONTACT_CREATE : Symbol.for('ContactController')
 
 }
 
@@ -67,22 +46,7 @@ TYPE.CONFIG = {
 }
 
 TYPE.REPOSITORY = {
-    SIGNUP : Symbol.for('ISignupRepository'),
-    SIGNIN : Symbol.for('ISigninRepository'),
-    TOKEN  : Symbol.for('ITokenRepository'),
-    OTP    : Symbol.for('IOtpRepository'),
-    XMPP_USER : Symbol.for('IXMPPUserRepository'),
-    SIP    : Symbol.for('ISIPRepository'),
-    PROFILE : Symbol.for('IProfileRepository'),
-    UPLOAD  : Symbol.for('IUploadRepository'),
-    FACEBOOK : Symbol.for('IFacebookRepository'),
-    FRIEND_REQUEST : Symbol.for('IFriendRequestRepository'),
-    USER_LOCATION : Symbol.for('IUserLocationRepository'),
-    USER_NEAREST : Symbol.for('INearestUserRepository'),
-    DEVICE_INFO  : Symbol.for('IDeviceInfoRepository'),
-    PUSH         : Symbol.for('IPushNotificationRepository'),
-    CONVERSATION : Symbol.for('IConversationRepository'),
-    USER_INFO    : Symbol.for('IUserInfoRepository')
+    CONTACT : Symbol.for('IContactRepository')
 
 }
 
